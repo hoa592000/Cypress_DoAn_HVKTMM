@@ -1,0 +1,1 @@
+//Kiểm tra leo thang đặc quyền
