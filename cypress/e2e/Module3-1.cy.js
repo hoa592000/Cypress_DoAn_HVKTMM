@@ -3,7 +3,8 @@ import loginPage from "../PageObjects/loginPage";
 const loginpage = new loginPage()
 
 describe('Kiểm tra quản lý định danh', () => {
-    it('Kiểm tra quản lý định danh người dùng', () => {
+    it('Định danh người dùng: email thanhhoa592000@gmail.com', () => {
+
         cy.visit('/login');
 
         loginpage.setClickCancel();
@@ -19,14 +20,14 @@ describe('Kiểm tra quản lý định danh', () => {
         cy.get('button#navbarAccount').click();
 
         cy.get('button[role="menuitem"]')
-            .contains("thanhhoa592000@gmail.com");
+            .contains("thanhhoa592000@gmail.com").should('be.visible');
 
     })
-    it('Kiểm tra quản lý định danh quản trị viên', () => {
+    it('Định danh người dùng: email kimsamule592000@gmail.com', () => {
         cy.visit('/login');
         loginpage.setClickCancel();
 
-        loginpage.setEmail("jim@juice-sh.op");
+        loginpage.setEmail("kimsamule592000@gmail.com");
 
         loginpage.setPassword("Chaizo7^^");
 
@@ -37,7 +38,7 @@ describe('Kiểm tra quản lý định danh', () => {
         cy.get('button#navbarAccount').click();
 
         cy.get('button[role="menuitem"]')
-            .contains("jim@juice-sh.op");
+            .contains("kimsamule592000@gmail.com").should('be.visible');
 
     })
 })

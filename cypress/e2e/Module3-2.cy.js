@@ -4,46 +4,68 @@ const registerpage = new registerPage();
 import loginPage from "../PageObjects/loginPage";
 const loginpage = new loginPage()
 
-
 describe('Kiểm tra quản lý định danh', () => {
+    let data = [
+        ["test3@gmail.com", "Chazio7^^"]
+    ]
 
-    it('Kiểm tra đăng kí', function() {
-        cy.visit('/register');
-        registerpage.setClickCancel();
+    data.forEach(row => {
+        it('Kiểm tra quản lý định danh: người dùng đăng kí rôi đăng nhập', function() {
+            if (row.length > 0) {
+                cy.visit('/register');
+                registerpage.setClickCancel();
 
-        registerpage.setInputEmail("test8@gmail.com");
+                registerpage.setInputEmail(row[0]);
 
-        registerpage.setInputPassword("Chazio7^^");
+                registerpage.setInputPassword(row[1]);
 
-        registerpage.setInputRepeatPassword("Chazio7^^");
+                registerpage.setInputRepeatPassword(row[1]);
 
-        cy.get('span[class="mat-slide-toggle-bar"]').click();
+                cy.get('span[class="mat-slide-toggle-bar"]').click();
 
-        registerpage.setAnswerControl("test");
+                registerpage.setAnswerControl("test");
 
-        registerpage.setClickRegister();
+                registerpage.setClickRegister();
 
-        cy.wait(1000);
-        
+                cy.wait(1000);
+
+                cy.visit('/login');
+
+                loginpage.setEmail(row[0]);
+
+                loginpage.setPassword(row[1]);
+
+                loginpage.clickSubmit();
+
+                cy.get('button#navbarAccount').click();
+
+                cy.get('button[role="menuitem"]')
+                    .contains(row[0]);
+
+            }
         })
+        it('Kiểm tra quản lý định danh: người dùng đã đăng kí nhiều lần', function() {
+            if (row.length > 0) {
+                cy.visit('/register');
+                registerpage.setClickCancel();
 
-    it('Kiểm tra đăng nhập ', function() {
+                registerpage.setInputEmail(row[0]);
 
-        cy.wait(1000)
+                registerpage.setInputPassword(row[1]);
 
-        cy.visit('/login');
+                registerpage.setInputRepeatPassword(row[1]);
 
+                cy.get('span[class="mat-slide-toggle-bar"]').click();
 
-        loginpage.setEmail("test8@gmail.com");
+                registerpage.setAnswerControl("test");
 
-        loginpage.setPassword("Chazio7^^");
+                registerpage.setClickRegister();
 
-        loginpage.clickSubmit();
+                cy.wait(1000);
 
-        cy.get('button#navbarAccount').click();
+                cy.get('div[class="error"]').contains("Email must be unique").should('be.visible');
 
-        cy.get('button[role="menuitem"]')
-            .contains("test8@gmail.com");
-
+            }
         })
+    })
 })
