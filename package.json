@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/e2e/Module3-1.cy.js --browser chrome"
+    "test": "npx cypress run --spec cypress/e2e/*cy.js --browser chrome"
   },
   "author": "thanhhoa",
   "license": "ISC",

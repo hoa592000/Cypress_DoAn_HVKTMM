@@ -22,11 +22,11 @@ describe('Kiểm tra quản lý định danh', () => {
             .contains("thanhhoa592000@gmail.com");
 
     })
-    it('Kiểm tra quản lý định danh quản trị viên', () => {
+    it('Kiểm tra quản lý định danh người dùng', () => {
         cy.visit('/login');
         loginpage.setClickCancel();
 
-        loginpage.setEmail("jim@juice-sh.op");
+        loginpage.setEmail("kimsamule592000@gmail.com");
 
         loginpage.setPassword("Chaizo7^^");
 
@@ -37,7 +37,7 @@ describe('Kiểm tra quản lý định danh', () => {
         cy.get('button#navbarAccount').click();
 
         cy.get('button[role="menuitem"]')
-            .contains("jim@juice-sh.op");
+            .contains("kimsamule592000@gmail.com");
 
     })
 })

@@ -5,6 +5,7 @@ const loginpage = new loginPage()
 describe('Kiểm tra xác thực', () => {
     it('Kiểm tra người dùng không tồn tại', () => {
         cy.visit('/login');
+        
         loginpage.setClickCancel();
 
         loginpage.setEmail("hoa.pham@eastgate-software.com");

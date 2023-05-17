@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-17T07:20:49.891Z",
+    "end": "2023-05-17T07:21:01.023Z",
+    "duration": 11132,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "776244c7-0950-43fb-b073-a1c9de53203a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Module3-2.cy.js",
+      "file": "cypress\\e2e\\Module3-2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d5539d79-25ef-4fbd-a41a-ba903e74b37d",
+          "title": "Kiểm tra quản lý định danh",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Kiểm tra đăng kí",
+              "fullTitle": "Kiểm tra quản lý định danh Kiểm tra đăng kí",
+              "timedOut": null,
+              "duration": 7635,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress\\\\e2e\\\\Module3-2.cy.js\"\n}",
+              "code": "cy.visit('/register');\nregisterpage.setClickCancel();\nregisterpage.setInputEmail(\"test8@gmail.com\");\nregisterpage.setInputPassword(\"Chazio7^^\");\nregisterpage.setInputRepeatPassword(\"Chazio7^^\");\ncy.get('span[class=\"mat-slide-toggle-bar\"]').click();\nregisterpage.setAnswerControl(\"test\");\nregisterpage.setClickRegister();\ncy.wait(1000);",
+              "err": {},
+              "uuid": "fbd416b6-ab8e-455e-8150-801978c990c7",
+              "parentUUID": "d5539d79-25ef-4fbd-a41a-ba903e74b37d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Kiểm tra đăng nhập ",
+              "fullTitle": "Kiểm tra quản lý định danh Kiểm tra đăng nhập ",
+              "timedOut": null,
+              "duration": 3445,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress\\\\e2e\\\\Module3-2.cy.js\"\n}",
+              "code": "cy.wait(1000);\ncy.visit('/login');\nloginpage.setEmail(\"test8@gmail.com\");\nloginpage.setPassword(\"Chazio7^^\");\nloginpage.clickSubmit();\ncy.get('button#navbarAccount').click();\ncy.get('button[role=\"menuitem\"]').contains(\"test8@gmail.com\");",
+              "err": {},
+              "uuid": "5366bfc7-41ff-4f72-bd5e-2d08f9ad6031",
+              "parentUUID": "d5539d79-25ef-4fbd-a41a-ba903e74b37d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fbd416b6-ab8e-455e-8150-801978c990c7",
+            "5366bfc7-41ff-4f72-bd5e-2d08f9ad6031"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11080,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "html": false,
+        "overwrite": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

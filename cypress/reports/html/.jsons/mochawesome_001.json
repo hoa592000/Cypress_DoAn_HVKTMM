@@ -1,0 +1,95 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-05-17T07:19:48.505Z",
+    "end": "2023-05-17T07:20:05.310Z",
+    "duration": 16805,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "98cd3518-8131-4d29-98b5-24fa1d8af1ce",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Module11-1.cy.js",
+      "file": "cypress\\e2e\\Module11-1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "html javascript ",
+          "fullTitle": "html javascript ",
+          "timedOut": null,
+          "duration": 16657,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress\\\\e2e\\\\Module11-1.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\Module11-1.cy.js\\\\html javascript (failed).png\"\n        }\n      ]\n    ]\n  }\n]",
+          "code": "cy.get('button#navbarAccount').click();\ncy.wait(1000);\ncy.get('button[role=\"menuitem\"]').contains(\"admin@juice-sh.op\").click();\ncy.get('#username').clear();\ncy.get('#username').type('<b>1</b>');\ncy.get('#submit').click();\ncy.wait(1000);\ncy.get('i[class=\"material-icons\"]').click();\ncy.get('button[class=\"mat-focus-indicator mat-tooltip-trigger mat-button mat-button-base\"]').click();\ncy.get('body.mat-app-background.bluegrey-lightgreen-theme:nth-child(2) div.mat-typography mat-sidenav-container.mat-drawer-container.mat-sidenav-container.mat-drawer-transition.mat-drawer-container-has-open mat-sidenav.mat-drawer.mat-sidenav.ng-tns-c87-0.ng-trigger.ng-trigger-transform.mat-drawer-over.ng-star-inserted.mat-drawer-opened:nth-child(3) div.mat-drawer-inner-container.ng-tns-c87-0 sidenav.ng-tns-c87-0 mat-nav-list.mat-nav-list.mat-list-base a.mat-list-item.mat-focus-indicator.ng-star-inserted:nth-child(8) span.mat-list-item-content > i.material-icons').click();\ncy.get('div[class=\"speech-bubble-left\"]').contains(\" Nice to meet you <b>1</b>, I'm Juicy \").should('not.exist');\ncy.wait(1000);\ncy.wait(1000);",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected not to find content: ' Nice to meet you <b>1</b>, I'm Juicy ' within the element: <div.speech-bubble-left> but continuously found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected not to find content: ' Nice to meet you <b>1</b>, I'm Juicy ' within the element: <div.speech-bubble-left> but continuously found it.\n    at Context.eval (webpack:///./cypress/e2e/Module11-1.cy.js:42:97)",
+            "diff": null
+          },
+          "uuid": "113e72c3-9780-4580-abb2-fb53e49b8efc",
+          "parentUUID": "98cd3518-8131-4d29-98b5-24fa1d8af1ce",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "113e72c3-9780-4580-abb2-fb53e49b8efc"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 16657,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "html": false,
+        "overwrite": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

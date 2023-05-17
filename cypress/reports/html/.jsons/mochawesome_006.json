@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-17T07:21:05.560Z",
+    "end": "2023-05-17T07:21:10.627Z",
+    "duration": 5067,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5f007bc1-c47d-4e60-b8db-297cdc99f4c7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Module4-1.cy.js",
+      "file": "cypress\\e2e\\Module4-1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0845f7a0-5505-4301-b6ef-c41805995146",
+          "title": "Kiểm tra xác thực",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Kiểm tra người dùng không tồn tại",
+              "fullTitle": "Kiểm tra xác thực Kiểm tra người dùng không tồn tại",
+              "timedOut": null,
+              "duration": 4974,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress\\\\e2e\\\\Module4-1.cy.js\"\n}",
+              "code": "cy.visit('/login');\nloginpage.setClickCancel();\nloginpage.setEmail(\"hoa.pham@eastgate-software.com\");\nloginpage.setPassword(\"1234567\");\nloginpage.clickSubmit();\ncy.wait(1000);\ncy.get('div.error.ng-star-inserted').should('be.visible');",
+              "err": {},
+              "uuid": "d89cf462-7864-4daf-b697-699491df184c",
+              "parentUUID": "0845f7a0-5505-4301-b6ef-c41805995146",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d89cf462-7864-4daf-b697-699491df184c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4974,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "html": false,
+        "overwrite": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

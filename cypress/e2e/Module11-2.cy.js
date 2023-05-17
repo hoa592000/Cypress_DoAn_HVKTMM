@@ -31,9 +31,9 @@ it('html injection', () => {
 
     cy.get('#submit').click();
 
-    cy.wait(1000)
-
     cy.get('i[class="material-icons"]').click();
+
+    cy.wait(1000)
 
     cy.get('button[class="mat-focus-indicator mat-tooltip-trigger mat-button mat-button-base"]').click(); 
 
