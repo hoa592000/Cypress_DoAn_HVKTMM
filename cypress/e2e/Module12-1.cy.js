@@ -1,5 +1,5 @@
 describe('POST', () => {
-    it('XSS đăng kí', () => {
+    it('API - XSS đăng kí', () => {
         cy.request({
             url: 'https://juice-shop.eliitme.xyz/#/register',
             method: 'POST',

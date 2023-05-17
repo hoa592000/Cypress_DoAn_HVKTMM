@@ -3,7 +3,8 @@ import loginPage from "../PageObjects/loginPage";
 const loginpage = new loginPage()
 
 describe('Kiểm tra quản lý định danh', () => {
-    it('Kiểm tra quản lý định danh người dùng', () => {
+    it('Định danh người dùng: email thanhhoa592000@gmail.com', () => {
+
         cy.visit('/login');
 
         loginpage.setClickCancel();
@@ -19,7 +20,7 @@ describe('Kiểm tra quản lý định danh', () => {
         cy.get('button#navbarAccount').click();
 
         cy.get('button[role="menuitem"]')
-            .contains("thanhhoa592000@gmail.com");
+            .contains("thanhhoa592000@gmail.com").should('be.visible');
 
     })
     it('Kiểm tra quản lý định danh người dùng', () => {
