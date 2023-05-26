@@ -8,8 +8,8 @@ class loginPage {
 
     Expected_Tile = "All Products";
     Actual_Tile = "div[class='ng-star-inserted']";
-    ErrorEmail = "mat-focus-indicator mat-menu-item ng-star-inserted ng-tns-c112-2"
-
+    ErrorEmail = "mat-focus-indicator mat-menu-item ng-star-inserted ng-tns-c112-2";
+    ErrorMessage = "div[class='error ng-star-inserted']"
     setClickCancel2() {
         cy.get(this.btnCancel2).click();
     }
@@ -48,12 +48,16 @@ class loginPage {
     }
 
     getActual() {
-            // cy.contains(this.Actual_Tile)
-            cy.get(this.Actual_Tile).contains(this.Expected_Tile);
+        cy.get(this.Actual_Tile).contains(this.Expected_Tile);
+    }
+    getErrorEmail() {
+            cy.get(this.ErrorEmail);
         }
-        // getErrorEmail() {
-        //     cy.get(this.ErrorEmail);
-        // }
+    
+    getErrorMessage(){
+        cy.get(this.ErrorMessage);
+    }
+    
 
 }
 

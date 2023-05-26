@@ -6,7 +6,7 @@ class registerPage {
     showMore = 'div[class="mat-form-field-infix ng-tns-c21-10"]';
     selectQuestion = '#mat-option-0';
     inputAnswerControl = '#securityAnswerControl';
-    buttonRegister = '#registerButton'
+    buttonRegister = 'button[id="registerButton"][type="submit"]'
 
     setClickCancel() {
 

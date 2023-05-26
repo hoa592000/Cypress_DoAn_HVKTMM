@@ -5,25 +5,30 @@ import loginPage from "../PageObjects/loginPage";
 const loginpage = new loginPage()
 
 describe('Kiểm tra quản lý định danh', () => {
-    let data = [
-        ["test3@gmail.com", "Chazio7^^"]
-    ]
+    const data = [
+        { email: "test3@gmail.com", pass: "Chazio7^^" },
+        { email: "test3@gmail.com", pass: "  " },
+        { email: "  ", pass: "Chazio7^^" }
+    ];
 
-    data.forEach(row => {
-        it('Kiểm tra quản lý định danh: người dùng đăng kí rôi đăng nhập', function() {
-            if (row.length > 0) {
+    data.forEach((row, index) => {
+        if (index == 0) {
+            it('Kiểm tra quản lý định danh: người dùng đăng kí', function () {
+
                 cy.visit('/register');
                 registerpage.setClickCancel();
 
-                registerpage.setInputEmail(row[0]);
+                registerpage.setInputEmail(row.email);
 
-                registerpage.setInputPassword(row[1]);
+                registerpage.setInputPassword(row.pass);
 
-                registerpage.setInputRepeatPassword(row[1]);
+                registerpage.setInputRepeatPassword(row.pass);
 
                 cy.get('span[class="mat-slide-toggle-bar"]').click();
 
                 registerpage.setAnswerControl("test");
+
+                cy.wait(1000);
 
                 registerpage.setClickRegister();
 
@@ -31,41 +36,67 @@ describe('Kiểm tra quản lý định danh', () => {
 
                 cy.visit('/login');
 
-                loginpage.setEmail(row[0]);
+                loginpage.setEmail(row.email);
 
-                loginpage.setPassword(row[1]);
+                loginpage.setPassword(row.pass);
 
                 loginpage.clickSubmit();
 
                 cy.get('button#navbarAccount').click();
 
                 cy.get('button[role="menuitem"]')
-                    .contains(row[0]);
+                    .contains(row.email);
+            })
 
-            }
-        })
-        it('Kiểm tra quản lý định danh: người dùng đã đăng kí nhiều lần', function() {
-            if (row.length > 0) {
+            it('Kiểm tra quản lý định danh: người dùng đã đăng kí nhiều lần', function () {
+                if (index == 0) {
+                    cy.visit('/register');
+                    registerpage.setClickCancel();
+
+                    registerpage.setInputEmail(row.email);
+
+                    registerpage.setInputPassword(row.pass);
+
+                    registerpage.setInputRepeatPassword(row.pass);
+
+                    cy.get('span[class="mat-slide-toggle-bar"]').click();
+
+                    registerpage.setAnswerControl("test");
+
+                    cy.wait(1000);
+
+                    registerpage.setClickRegister();
+
+                    cy.wait(2000);
+
+                    cy.get('div.error').contains("Email must be unique");
+
+                }
+            })
+        }
+        else if (index > 0) {
+            it('Kiểm tra quản lý định danh: người dùng nhập sai', function () {
+
+
                 cy.visit('/register');
                 registerpage.setClickCancel();
 
-                registerpage.setInputEmail(row[0]);
+                registerpage.setInputEmail(row.email);
 
-                registerpage.setInputPassword(row[1]);
+                registerpage.setInputPassword(row.pass);
 
-                registerpage.setInputRepeatPassword(row[1]);
+                registerpage.setInputRepeatPassword(row.pass);
 
                 cy.get('span[class="mat-slide-toggle-bar"]').click();
 
                 registerpage.setAnswerControl("test");
 
-                registerpage.setClickRegister();
+                cy.get('#registerButton').contains("Register").should('not.be.enabled');
 
-                cy.wait(1000);
 
-                cy.get('div[class="error"]').contains("Email must be unique").should('be.visible');
+                cy.wait(2000);
 
-            }
-        })
+            })
+        }
     })
 })
