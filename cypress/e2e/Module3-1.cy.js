@@ -6,8 +6,8 @@ describe('Kiểm tra quản lý định danh', () => {
     const data = [
         { email: "thanhhoa592000@gmail.com", pass: "1234567" },
         { email: "kimsamule592000@gmail.com", pass: "Chaizo7^^" },
-        { email: "kimsamule592000@gmail.com", pass: "chazio7^^" },
-        { email: "kimsamule@gmail.com", pass: "Chazio7^^" }
+        { email: "kimsamule@gmail.com", pass: "Chazio7^^" },
+        { email: "kimsamule59200@gmail.com", pass: "chazio7^^" }
     ];
 
     data.forEach((row, index) => {
@@ -50,9 +50,9 @@ describe('Kiểm tra quản lý định danh', () => {
         
                 cy.get('button#navbarAccount').click();
 
-                loginpage.getErrorMessage()
+                cy.wait(1000);
 
-                cy.wait(2000);
+                loginpage.getErrorMessage()
 
             })
         }

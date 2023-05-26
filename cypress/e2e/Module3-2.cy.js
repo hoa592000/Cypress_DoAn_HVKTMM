@@ -91,10 +91,9 @@ describe('Kiểm tra quản lý định danh', () => {
 
                 registerpage.setAnswerControl("test");
 
+                cy.wait(1000);
+
                 cy.get('#registerButton').contains("Register").should('not.be.enabled');
-
-
-                cy.wait(2000);
 
             })
         }
