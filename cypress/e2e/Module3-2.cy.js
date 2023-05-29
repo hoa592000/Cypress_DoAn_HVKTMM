@@ -7,8 +7,10 @@ const loginpage = new loginPage()
 describe('Kiểm tra quản lý định danh', () => {
     const data = [
         { email: "test3@gmail.com", pass: "Chazio7^^" },
-        { email: "test3@gmail.com", pass: "  " },
-        { email: "  ", pass: "Chazio7^^" }
+        { email: "test3@gmail.com", pass: "   " },
+        { email: "   ", pass: "Chazio7^^" },
+        { email: "thanhhoa", pass: "Chaizo7^^" },
+        { email: "thanhhoa.gmail.com", pass: "Chaizo7^^" }
     ];
 
     data.forEach((row, index) => {

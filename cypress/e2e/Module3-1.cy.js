@@ -7,7 +7,9 @@ describe('Kiểm tra quản lý định danh', () => {
         { email: "thanhhoa592000@gmail.com", pass: "1234567" },
         { email: "kimsamule592000@gmail.com", pass: "Chaizo7^^" },
         { email: "kimsamule@gmail.com", pass: "Chazio7^^" },
-        { email: "kimsamule59200@gmail.com", pass: "chazio7^^" }
+        { email: "kimsamule59200@gmail.com", pass: "chazio7^^" },
+        { email: "kimsamule", pass: "Chaizo7^^" },
+        { email: "kimsamule.gmail.com", pass: "Chaizo7^^" },
     ];
 
     data.forEach((row, index) => {
