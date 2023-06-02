@@ -10,7 +10,8 @@ describe('Kiểm tra xác thực đầu vào', () => {
         ["' or 1=1--", "' or 1=1--"],
         ['or 1=1-', 'or 1=1-'],
         ['or 1=1/*', 'or 1=1/*'],
-        ['" or "a"="a', '" or "a"="a']
+        ['" or "a"="a', '" or "a"="a'],
+        [' OR 1=1',' OR 1=1']
     ]
 
     data.forEach(row => {

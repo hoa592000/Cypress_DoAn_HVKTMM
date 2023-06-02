@@ -1,6 +1,6 @@
 import { printf } from "extsprintf";
 import loginPage from "../PageObjects/loginPage";
-const loginpage = new loginPage()
+const loginpage = new loginPage();
 
 describe('Kiểm tra quản lý định danh', () => {
     const data = [
@@ -9,12 +9,12 @@ describe('Kiểm tra quản lý định danh', () => {
         { email: "kimsamule@gmail.com", pass: "Chazio7^^" },
         { email: "kimsamule59200@gmail.com", pass: "chazio7^^" },
         { email: "kimsamule", pass: "Chaizo7^^" },
-        { email: "kimsamule.gmail.com", pass: "Chaizo7^^" },
+        { email: "kimsamulegmail.com", pass: "Chaizo7^^" },
     ];
 
     data.forEach((row, index) => {
         if (index <= 1) {
-            it('Định danh người dùng', () => {
+            it('Định danh người dùng khi đăng nhập đúng', () => {
     
                 cy.visit('/login');
         
@@ -36,7 +36,7 @@ describe('Kiểm tra quản lý định danh', () => {
             })
         }
         else if (index > 1) {
-            it('Kiểm tra quản lý định danh: người dùng nhập sai', function () {
+            it('Kiểm tra quản lý định danh: người dùng đăng nhập sai', function () {
 
                 cy.visit('/login');
         

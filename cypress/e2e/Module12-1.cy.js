@@ -1,7 +1,7 @@
 
     it.only('POST - XSS đăng kí', () => {
         cy.request({
-            url: 'https://juice-shop.eliitme.xyz/#/register',
+            url: 'https://juice-shop.eliitme.xyz/api/Users/',
             method: 'POST',
             cache: 'no-cache',
             headers: {

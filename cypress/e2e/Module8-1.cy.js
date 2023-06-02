@@ -56,7 +56,7 @@ describe('Kiểm tra xử lý lỗi', () => {
             }
         })
        
-        cy.get('div[class="speech-bubble-left"]').contains(" Oooookay, if you promise to stop nagging me here's a 10% coupon code for you: o*I]qgC7sn ").should('not.exist');
+        cy.get('div[class="speech-bubble-left"]').contains(" Oooookay, if you promise to stop nagging me here's a 10% coupon code for you").should('not.exist');
 
     })
 });

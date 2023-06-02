@@ -7,7 +7,7 @@ const loginpage = new loginPage()
 describe('Kiểm tra quản lý định danh', () => {
     const data = [
         { email: "test3@gmail.com", pass: "Chazio7^^" },
-        { email: "test3@gmail.com", pass: "   " },
+        { email: "test4@gmail.com", pass: "   " },
         { email: "   ", pass: "Chazio7^^" },
         { email: "thanhhoa", pass: "Chaizo7^^" },
         { email: "thanhhoa.gmail.com", pass: "Chaizo7^^" }
@@ -77,7 +77,7 @@ describe('Kiểm tra quản lý định danh', () => {
             })
         }
         else if (index > 0) {
-            it('Kiểm tra quản lý định danh: người dùng nhập sai', function () {
+            it('Kiểm tra quản lý định danh: người dùng đăng kí nhập sai', function () {
 
 
                 cy.visit('/register');
