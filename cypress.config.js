@@ -32,6 +32,6 @@ const fs = require("fs");
           
       });
       },
-      baseUrl: 'https://juice-shop.eliitme.xyz/#/',   
+      baseUrl: 'https://juice-shop.oliveit.info/#/',   
     },
   });
