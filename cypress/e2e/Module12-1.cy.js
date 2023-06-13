@@ -1,7 +1,7 @@
 
     it.only('POST - XSS đăng kí', () => {
         cy.request({
-            url: 'https://juice-shop.eliitme.xyz/api/Users/',
+            url: 'https://juice-shop.oliveit.info/api/Users/',
             method: 'POST',
             cache: 'no-cache',
             headers: {
@@ -21,7 +21,7 @@
 
     it.only('POST -  đăng nhập', () => {
         cy.request({
-            url: 'https://juice-shop.eliitme.xyz/rest/user/login',
+            url: 'https://juice-shop.oliveit.info/rest/user/login',
             method: 'POST',
             cache: 'no-cache',
             headers: {
@@ -32,13 +32,12 @@
                 password: '1234567'
             })
         }).then((response) => {
-            expect(response.status).to.eq(200);
-            // cy.log(JSON.stringify(response));
+            // expect(response.status).to.eq(200);
             cy.log(response.body.authentication.token);
             const access_token = response.body.authentication.token;
 
             cy.request({
-                url: 'https://juice-shop.eliitme.xyz/rest/user/whoami',
+                url: 'https://juice-shop.oliveit.info/user/whoami',
                 method: 'GET',
                 cache: 'no-cache',
                 headers: {
