@@ -32,7 +32,7 @@
                 password: '1234567'
             })
         }).then((response) => {
-            // expect(response.status).to.eq(200);
+            expect(response.status).to.eq(200);
             cy.log(response.body.authentication.token);
             const access_token = response.body.authentication.token;
 
